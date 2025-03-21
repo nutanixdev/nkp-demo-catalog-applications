@@ -1,0 +1,20 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jupyterhub-5.2.1-defaults
+  namespace: ${releaseNamespace}
+data:
+  values.yaml: |
+    ---
+    hub:
+      config:
+        Authenticator:
+          admin_users:
+            - admin
+          allowed_users:
+            - user
+        DummyAuthenticator:
+          password: nutanix/4u
+        JupyterHub:
+          authenticator_class: dummy

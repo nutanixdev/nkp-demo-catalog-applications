@@ -1,0 +1,10 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: hub.jupyter.org
+  namespace: ${workspaceNamespace}
+spec:
+  url: "${helmMirrorURL:=https://hub.jupyter.org/helm-chart/}"
+  interval: 10m
+  timeout: 1m
