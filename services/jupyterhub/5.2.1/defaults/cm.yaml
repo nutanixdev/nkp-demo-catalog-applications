@@ -8,6 +8,7 @@ data:
   values.yaml: |
     ---
     hub:
+      baseUrl: /jupyter
       config:
         Authenticator:
           admin_users:
@@ -28,6 +29,8 @@ data:
         traefik.ingress.kubernetes.io/router.middlewares: kommander-stripprefixes@kubernetescrd
         traefik.ingress.kubernetes.io/router.tls: "true"
       ingressClassName: kommander-traefik
+      extraPaths:
+        - /jupyter
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -37,7 +40,7 @@ metadata:
   labels:
     kommander.d2iq.io/application: jupyterhub
 data:
-  dashboardLink: /hub/
+  dashboardLink: /jupyter/
   docsLink: "nodocs"
   name: JupyterHub
   version: 5.2.1
