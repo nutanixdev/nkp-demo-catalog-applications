@@ -35,3 +35,4 @@ hub:
 - [jupyter.org](https://jupyter.org/hub)
 - [Jupyter Documentation](https://docs.jupyter.org/en/latest/)
 - [JupyterHub for Kubernetes](https://z2jh.jupyter.org/en/stable/)
+- [List of Helm values](https://github.com/jupyterhub/zero-to-jupyterhub-k8s/blob/main/jupyterhub/values.yaml)
