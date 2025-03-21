@@ -18,3 +18,22 @@ data:
           password: nutanix/4u
         JupyterHub:
           authenticator_class: dummy
+    ingress:
+      enabled: true
+      annotations:
+        traefik.ingress.kubernetes.io/router.middlewares: kommander-stripprefixes@kubernetescrd
+        traefik.ingress.kubernetes.io/router.tls: "true"
+      ingressClassName: kommander-traefik
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jupyterhub-dashboard
+  namespace: ${releaseNamespace}
+  labels:
+    kommander.d2iq.io/application: jupyterhub
+data:
+  dashboardLink: /hub/
+  docsLink: "nodocs"
+  name: JupyterHub
+  version: 5.2.1
