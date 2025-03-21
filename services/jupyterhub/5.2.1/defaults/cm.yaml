@@ -40,6 +40,6 @@ metadata:
     kommander.d2iq.io/application: jupyterhub
 data:
   dashboardLink: /jupyter/
-  docsLink: "nodocs"
+  docsLink: "https://z2jh.jupyter.org/en/stable/"
   name: JupyterHub
   version: 5.2.1
