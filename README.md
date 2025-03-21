@@ -1,0 +1,1 @@
+# nkp-demo-catalog-applications
