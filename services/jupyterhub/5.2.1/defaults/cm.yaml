@@ -29,8 +29,7 @@ data:
         traefik.ingress.kubernetes.io/router.middlewares: kommander-stripprefixes@kubernetescrd
         traefik.ingress.kubernetes.io/router.tls: "true"
       ingressClassName: kommander-traefik
-      extraPaths:
-        - /jupyter
+      pathType: ImplementationSpecific
 ---
 apiVersion: v1
 kind: ConfigMap
