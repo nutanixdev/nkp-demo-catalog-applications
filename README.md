@@ -17,7 +17,7 @@ This demo catalog repository holds examples of applications to help understand h
 
 ```shell
 nkp create catalog nkp-demo-catalog-applications \
-    -w kommander \
+    -w kommander-workspace \
     --branch main \
     --url https://github.com/nutanixdev/nkp-demo-catalog-applications
 ```
