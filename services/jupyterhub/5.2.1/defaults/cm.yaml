@@ -19,10 +19,10 @@ data:
           password: nutanix/4u
         JupyterHub:
           authenticator_class: dummy
-    networkPolicy:
-      egress:
-        - ports:
-            - port: 6443
+      networkPolicy:
+        egress:
+          - ports:
+              - port: 6443
     ingress:
       enabled: true
       annotations:
