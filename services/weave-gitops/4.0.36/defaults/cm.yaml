@@ -3,7 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: ww-gitops-4.0.36-defaults
-  namespace: kommander-flux
+  namespace: ${releaseNamespace}
 data:
   values.yaml: |
     ---
@@ -17,7 +17,7 @@ data:
     ingress:
       enabled: true
       annotations:
-        traefik.ingress.kubernetes.io/router.middlewares: kommander-flux-redirect-to-sslip@kubernetescrd
+        traefik.ingress.kubernetes.io/router.middlewares: ${releaseNamespace}-redirect-to-sslip@kubernetescrd
       className: kommander-traefik
       hosts:
         - host: ""
@@ -29,7 +29,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: ww-gitops-dashboard
-  namespace: kommander-flux
+  namespace: ${releaseNamespace}
   labels:
     kommander.d2iq.io/application: ww-gitops
 data:

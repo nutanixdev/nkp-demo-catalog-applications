@@ -3,7 +3,7 @@ apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
   name: redirect-to-sslip
-  namespace: kommander-flux
+  namespace: ${releaseNamespace}
 spec:
   redirectRegex:
     regex: ^https:\/\/([^\/]+)\/ww-gitops\/?(.*)
@@ -13,7 +13,7 @@ apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
   name: ww-gitops-fqdn-route
-  namespace: kommander-flux
+  namespace: ${releaseNamespace}
 spec:
   entryPoints:
     - web
