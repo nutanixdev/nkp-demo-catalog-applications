@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: weave-gitops
-      # reconcileStrategy: ChartVersion
+      reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
         name: ww-gitops
@@ -25,7 +25,10 @@ spec:
     remediation:
       retries: 30
   releaseName: ww-gitops
+  targetNamespace: kommander-flux
   valuesFrom:
     - kind: ConfigMap
       name: ww-gitops-4.0.36-defaults
-  targetNamespace: kommander-flux
+    - kind: ConfigMap
+      name: ww-gitops-overrides
+      optional: true
