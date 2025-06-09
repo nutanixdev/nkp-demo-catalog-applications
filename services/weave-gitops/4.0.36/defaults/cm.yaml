@@ -14,12 +14,22 @@ data:
     envVars:
       - name: WEAVE_GITOPS_FEATURE_TELEMETRY
         value: "false"
-    # ingress:
-    #   enabled: true
-    #   annotations:
-    #     traefik.ingress.kubernetes.io/router.middlewares: kommander-stripprefixes@kubernetescrd
-    #     traefik.ingress.kubernetes.io/router.tls: "true"
-    #   className: kommander-traefik
+    ingress:
+      enabled: true
+      annotations:
+        traefik.ingress.kubernetes.io/router.middlewares: kommander-stripprefixes@kubernetescrd
+        traefik.ingress.kubernetes.io/router.tls: "true"
+      className: kommander-traefik
+      hosts:
+        - http:
+            paths:
+              - backend:
+                  service:
+                    name: ww-gitops-weave-gitops
+                    port:
+                      name: http
+                path: /ww-gitops/
+                pathType: ImplementationSpecific
 ---
 apiVersion: v1
 kind: ConfigMap
