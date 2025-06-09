@@ -14,12 +14,12 @@ data:
     envVars:
       - name: WEAVE_GITOPS_FEATURE_TELEMETRY
         value: "false"
-    ingress:
-      enabled: true
-      annotations:
-        traefik.ingress.kubernetes.io/router.middlewares: kommander-stripprefixes@kubernetescrd
-        traefik.ingress.kubernetes.io/router.tls: "true"
-      className: kommander-traefik
+    # ingress:
+    #   enabled: true
+    #   annotations:
+    #     traefik.ingress.kubernetes.io/router.middlewares: kommander-stripprefixes@kubernetescrd
+    #     traefik.ingress.kubernetes.io/router.tls: "true"
+    #   className: kommander-traefik
 ---
 apiVersion: v1
 kind: ConfigMap
