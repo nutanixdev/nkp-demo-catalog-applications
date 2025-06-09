@@ -1,0 +1,26 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect-to-sslip
+  namespace: kommander-flux
+spec:
+  redirectRegex:
+    regex: ^https:\/\/([^\/]+)\/ww-gitops\/?(.*)
+    replacement: "https://ww-gitops.$1.sslip.io/"
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: ww-gitops-fqdn-route
+  namespace: kommander-flux
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - match: HostRegexp(`ww-gitops.{subdomain:[0-9.]+}.sslip.io`)
+      syntax: v2
+      kind: Rule
+      services:
+        - name: ww-gitops-weave-gitops
+          port: 9001

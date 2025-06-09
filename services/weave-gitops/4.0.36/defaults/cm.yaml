@@ -17,19 +17,13 @@ data:
     ingress:
       enabled: true
       annotations:
-        traefik.ingress.kubernetes.io/router.middlewares: kommander-stripprefixes@kubernetescrd
-        traefik.ingress.kubernetes.io/router.tls: "true"
+        traefik.ingress.kubernetes.io/router.middlewares: kommander-flux-redirect-to-sslip@kubernetescrd
       className: kommander-traefik
       hosts:
-        - http:
+        - host: ""
             paths:
-              - backend:
-                  service:
-                    name: ww-gitops-weave-gitops
-                    port:
-                      name: http
-                path: /ww-gitops/
-                pathType: ImplementationSpecific
+              - path: /ww-gitops
+                pathType: Prefix
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -39,7 +33,7 @@ metadata:
   labels:
     kommander.d2iq.io/application: ww-gitops
 data:
-  dashboardLink: /ww-gitops/
-  docsLink: "https://z2jh.jupyter.org/en/stable/"
+  dashboardLink: /ww-gitops
+  docsLink: "https://docs.gitops.weaveworks.org/docs/intro-weave-gitops/"
   name: Weave GitOps
   version: 4.0.36
