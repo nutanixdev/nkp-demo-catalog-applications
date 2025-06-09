@@ -21,9 +21,9 @@ data:
       className: kommander-traefik
       hosts:
         - host: ""
-            paths:
-              - path: /ww-gitops
-                pathType: Prefix
+          paths:
+            - path: /ww-gitops
+              pathType: Prefix
 ---
 apiVersion: v1
 kind: ConfigMap
