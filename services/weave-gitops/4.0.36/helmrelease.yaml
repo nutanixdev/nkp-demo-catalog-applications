@@ -1,0 +1,28 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: ww-gitops
+  namespace: kommander-flux
+  annotations:
+    metadata.weave.works/description: This is the Weave GitOps Dashboard. It provides a simple way to get insights into your GitOps workloads.
+spec:
+  chart:
+    spec:
+      chart: weave-gitops
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: ww-gitops
+  interval: 1h0m0s
+  install:
+    remediation:
+      retries: 30
+  upgrade:
+    remediation:
+      retries: 30
+  releaseName: ww-gitops
+  valuesFrom:
+    - kind: ConfigMap
+      name: ww-gitops-4.0.36-defaults
+  targetNamespace: kommander-flux

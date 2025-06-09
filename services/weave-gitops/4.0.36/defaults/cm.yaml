@@ -1,0 +1,35 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ww-gitops-4.0.36-defaults
+  namespace: kommander-flux
+data:
+  values.yaml: |
+    ---
+    adminUser:
+      create: true
+      username: admin
+      passwordHash: $2y$05$cZqELlSiL7mHz/jWch481OlZ1ZxrwUDFVpo7NItOP8M3KkBhzmTCS # The default password is nutanix/4u
+    envVars:
+      - name: WEAVE_GITOPS_FEATURE_TELEMETRY
+        value: "false"
+    ingress:
+      enabled: true
+      annotations:
+        traefik.ingress.kubernetes.io/router.middlewares: kommander-stripprefixes@kubernetescrd
+        traefik.ingress.kubernetes.io/router.tls: "true"
+      className: kommander-traefik
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ww-gitops-dashboard
+  namespace: kommander-flux
+  labels:
+    kommander.d2iq.io/application: ww-gitops
+data:
+  dashboardLink: /ww-gitops/
+  docsLink: "https://z2jh.jupyter.org/en/stable/"
+  name: Weave GitOps
+  version: 4.0.36
