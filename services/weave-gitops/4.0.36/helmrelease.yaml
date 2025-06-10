@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: ww-gitops
+  name: weave-gitops
   namespace: ${releaseNamespace}
   annotations:
     metadata.weave.works/description: This is the Weave GitOps Dashboard. It provides a simple way to get insights into your GitOps workloads.
@@ -13,7 +13,7 @@ spec:
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
-        name: ww-gitops
+        name: weave-gitops
         namespace: ${releaseNamespace}
   interval: 1m
   install:
@@ -24,11 +24,11 @@ spec:
     crds: CreateReplace
     remediation:
       retries: 30
-  releaseName: ww-gitops
+  releaseName: weave-gitops
   targetNamespace: ${releaseNamespace}
   valuesFrom:
     - kind: ConfigMap
-      name: ww-gitops-4.0.36-defaults
+      name: weave-gitops-4.0.36-defaults
     - kind: ConfigMap
-      name: ww-gitops-overrides
+      name: weave-gitops-overrides
       optional: true

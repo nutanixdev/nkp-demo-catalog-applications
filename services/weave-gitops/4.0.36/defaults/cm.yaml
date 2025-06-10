@@ -2,11 +2,13 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: ww-gitops-4.0.36-defaults
+  name: weave-gitops-4.0.36-defaults
   namespace: ${releaseNamespace}
 data:
   values.yaml: |
     ---
+    additionalArgs:
+      - --route-prefix=/weave-gitops
     adminUser:
       create: true
       username: admin
@@ -22,18 +24,18 @@ data:
       hosts:
         - host: ""
           paths:
-            - path: /ww-gitops
+            - path: /weave-gitops
               pathType: Prefix
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: ww-gitops-dashboard
+  name: weave-gitops-dashboard
   namespace: ${releaseNamespace}
   labels:
-    kommander.d2iq.io/application: ww-gitops
+    kommander.d2iq.io/application: weave-gitops
 data:
-  dashboardLink: /ww-gitops
+  dashboardLink: /weave-gitops
   docsLink: "https://docs.gitops.weaveworks.org/docs/intro-weave-gitops/"
   name: Weave GitOps
   version: 4.0.36

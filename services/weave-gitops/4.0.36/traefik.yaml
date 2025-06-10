@@ -6,22 +6,22 @@ metadata:
   namespace: ${releaseNamespace}
 spec:
   redirectRegex:
-    regex: ^https:\/\/([^\/]+)\/ww-gitops\/?(.*)
-    replacement: "https://ww-gitops.{{ .Values.traefikIP }}.sslip.io/"
+    regex: ^https:\/\/([^\/]+)\/weave-gitops\/?(.*)
+    replacement: "https://weave-gitops.$1.sslip.io/"
 ---
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
-  name: ww-gitops-fqdn-route
+  name: weave-gitops-fqdn-route
   namespace: ${releaseNamespace}
 spec:
   entryPoints:
     - web
     - websecure
   routes:
-    - match: HostRegexp(`ww-gitops.{subdomain:[0-9.]+}.sslip.io`)
+    - match: HostRegexp(`weave-gitops.{subdomain:[0-9.]+}.sslip.io`)
       # syntax: v2
       kind: Rule
       services:
-        - name: ww-gitops-weave-gitops
+        - name: weave-gitops-weave-gitops
           port: 9001
