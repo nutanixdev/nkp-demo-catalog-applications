@@ -18,8 +18,8 @@ data:
         value: "false"
     ingress:
       enabled: true
-      annotations:
-        traefik.ingress.kubernetes.io/router.middlewares: ${releaseNamespace}-redirect-to-sslip@kubernetescrd
+      # annotations:
+      #   traefik.ingress.kubernetes.io/router.middlewares: ${releaseNamespace}-redirect-to-sslip@kubernetescrd
       className: kommander-traefik
       hosts:
         - host: ""
