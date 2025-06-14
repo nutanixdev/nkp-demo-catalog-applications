@@ -6,8 +6,8 @@ metadata:
 type: Opaque
 stringData:
   connection: |
-    s3:
-      v4auth: true
-      regionendpoint: "http://rook-ceph-rgw-dkp-object-store.${releaseNamespace}.svc:80/"
-      pathstyle: true
-      region: us-east-1
+    provider: AWS
+    aws_signature_version: 4
+    endpoint: "http://rook-ceph-rgw-dkp-object-store.${releaseNamespace}.svc:80/"
+    path_style: true
+    region: us-east-1
