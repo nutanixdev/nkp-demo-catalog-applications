@@ -1,0 +1,10 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: charts.gitlab.io
+  namespace: ${releaseNamespace}
+spec:
+  url: "${helmMirrorURL:=https://charts.gitlab.io/}"
+  interval: 10m
+  timeout: 1m

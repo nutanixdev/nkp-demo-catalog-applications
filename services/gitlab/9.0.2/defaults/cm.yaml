@@ -1,0 +1,52 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gitlab-9.0.2-defaults
+  namespace: ${releaseNamespace}
+data:
+  values.yaml: |
+    ---
+    global:
+      edition: ce
+      hosts:
+        domain: sslip.io
+        hostSuffix: placeholder
+      ingress:
+        configureCertmanager: false
+        class: kommander-traefik
+        provider: traefik
+    certmanager:
+      install: false
+    minio:
+      enabled: false
+    nginx-ingress:
+      enabled: false
+    gitlab-runner:
+      install: false
+    prometheus:
+      install: false
+    registry:
+      enabled: false
+    gitlab:
+      gitlab-shell:
+        minReplicas: 1
+        maxReplicas: 1
+      gitlab-exporter:
+        enabled: false
+      webservice:
+        minReplicas: 1
+        maxReplicas: 1
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gitlab-dashboard
+  namespace: ${releaseNamespace}
+  labels:
+    kommander.d2iq.io/application: gitlab
+data:
+  dashboardLink: placeholder
+  docsLink: "https://docs.gitlab.com/"
+  name: GitLab
+  version: 9.0.2

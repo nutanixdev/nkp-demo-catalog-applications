@@ -1,0 +1,32 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: gitlab
+  namespace: ${releaseNamespace}
+spec:
+  chart:
+    spec:
+      chart: gitlab
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: charts.gitlab.io
+        namespace: ${releaseNamespace}
+  interval: 1m
+  install:
+    crds: CreateReplace
+    remediation:
+      retries: 30
+  upgrade:
+    crds: CreateReplace
+    remediation:
+      retries: 30
+  releaseName: gitlab
+  targetNamespace: ${releaseNamespace}
+  valuesFrom:
+    - kind: ConfigMap
+      name: gitlab-9.0.2-defaults
+    - kind: ConfigMap
+      name: gitlab-overrides
+      optional: true

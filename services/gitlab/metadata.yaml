@@ -1,0 +1,30 @@
+displayName: GitLab
+description: The most-comprehensive AI-powered DevSecOps platform
+allowMultipleInstances: false
+category:
+  - general
+scope:
+  - workspace
+licensing:
+  - Ultimate
+  - Enterprise
+certifications:
+overview: |-
+  ## Disclaimer
+
+  This is not an official production ready code. It's meant to be used as a PoC.
+
+  ## Overview
+
+  **GitLab** is a complete DevSecOps platform, delivered as a single application. This Helm chart deploys GitLab and its supporting components on Kubernetes for scalable, cloud-native Git repository management, CI/CD, and collaboration.
+
+  ## Access
+
+  - You can access the GitLab Dashboard using the application dashboard available on the cluster **Application Dashboards** tab
+
+  ## More Information
+
+  - [gitlab.com](https://about.gitlab.com/)
+  - [GitLab Documentation](https://docs.gitlab.com/)
+  - [List of Helm values](https://gitlab.com/gitlab-org/charts/gitlab/-/blob/master/values.yaml)
+icon: PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgcm9sZT0iaW1nIiBjbGFzcz0idGFudWtpLWxvZ28iIHdpZHRoPSIyNSIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI1IDI0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGNsYXNzPSJ0YW51a2ktc2hhcGUgdGFudWtpIiBkPSJtMjQuNTA3IDkuNS0uMDM0LS4wOUwyMS4wODIuNTYyYS44OTYuODk2IDAgMCAwLTEuNjk0LjA5MWwtMi4yOSA3LjAxSDcuODI1TDUuNTM1LjY1M2EuODk4Ljg5OCAwIDAgMC0xLjY5NC0uMDlMLjQ1MSA5LjQxMS40MTYgOS41YTYuMjk3IDYuMjk3IDAgMCAwIDIuMDkgNy4yNzhsLjAxMi4wMS4wMy4wMjIgNS4xNiAzLjg2NyAyLjU2IDEuOTM1IDEuNTU0IDEuMTc2YTEuMDUxIDEuMDUxIDAgMCAwIDEuMjY4IDBsMS41NTUtMS4xNzYgMi41Ni0xLjkzNSA1LjE5Ny0zLjg5LjAxNC0uMDFBNi4yOTcgNi4yOTcgMCAwIDAgMjQuNTA3IDkuNVoiIGZpbGw9IiNFMjQzMjkiPjwvcGF0aD4KICA8cGF0aCBjbGFzcz0idGFudWtpLXNoYXBlIHJpZ2h0LWNoZWVrIiBkPSJtMjQuNTA3IDkuNS0uMDM0LS4wOWExMS40NCAxMS40NCAwIDAgMC00LjU2IDIuMDUxbC03LjQ0NyA1LjYzMiA0Ljc0MiAzLjU4NCA1LjE5Ny0zLjg5LjAxNC0uMDFBNi4yOTcgNi4yOTcgMCAwIDAgMjQuNTA3IDkuNVoiIGZpbGw9IiNGQzZEMjYiPjwvcGF0aD4KICA8cGF0aCBjbGFzcz0idGFudWtpLXNoYXBlIGNoaW4iIGQ9Im03LjcwNyAyMC42NzcgMi41NiAxLjkzNSAxLjU1NSAxLjE3NmExLjA1MSAxLjA1MSAwIDAgMCAxLjI2OCAwbDEuNTU1LTEuMTc2IDIuNTYtMS45MzUtNC43NDMtMy41ODQtNC43NTUgMy41ODRaIiBmaWxsPSIjRkNBMzI2Ij48L3BhdGg+CiAgPHBhdGggY2xhc3M9InRhbnVraS1zaGFwZSBsZWZ0LWNoZWVrIiBkPSJNNS4wMSAxMS40NjFhMTEuNDMgMTEuNDMgMCAwIDAtNC41Ni0yLjA1TC40MTYgOS41YTYuMjk3IDYuMjk3IDAgMCAwIDIuMDkgNy4yNzhsLjAxMi4wMS4wMy4wMjIgNS4xNiAzLjg2NyA0Ljc0NS0zLjU4NC03LjQ0NC01LjYzMloiIGZpbGw9IiNGQzZEMjYiPjwvcGF0aD4KPC9zdmc+
