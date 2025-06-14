@@ -18,6 +18,11 @@ data:
         provider: traefik
       minio:
         enabled: false
+      appConfig:
+        object_store:
+          enabled: true
+          connection:
+            secret: rook-bucket-storage
     certmanager:
       install: false
     nginx-ingress:

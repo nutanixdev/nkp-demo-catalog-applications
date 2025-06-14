@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: rook-bucket-storage
+  namespace: ${releaseNamespace}
+type: Opaque
+stringData:
+  connection: |
+    s3:
+      v4auth: true
+      regionendpoint: "http://rook-ceph-rgw-dkp-object-store.${releaseNamespace}.svc:80/"
+      pathstyle: true
+      region: us-east-1
