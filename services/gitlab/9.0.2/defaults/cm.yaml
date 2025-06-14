@@ -16,10 +16,10 @@ data:
         configureCertmanager: false
         class: kommander-traefik
         provider: traefik
+      minio:
+        enabled: false
     certmanager:
       install: false
-    minio:
-      enabled: false
     nginx-ingress:
       enabled: false
     gitlab-runner:
