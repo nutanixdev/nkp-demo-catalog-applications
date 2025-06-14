@@ -9,4 +9,4 @@ data:
   dashboardLink: https://n8n.${ingressAddress}/
   docsLink: https://n8n.io
   name: n8n
-  version: "1.83.2"
+  version: "1.97.1"
