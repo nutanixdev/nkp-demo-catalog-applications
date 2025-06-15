@@ -3,7 +3,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: gitlab
-  namespace: ${releaseNamespace}
+  namespace: gitlab
 spec:
   chart:
     spec:
@@ -12,7 +12,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: charts.gitlab.io
-        namespace: ${releaseNamespace}
+        namespace: gitlab
   interval: 1m
   install:
     crds: CreateReplace
@@ -23,7 +23,7 @@ spec:
     remediation:
       retries: 30
   releaseName: gitlab
-  targetNamespace: ${releaseNamespace}
+  targetNamespace: gitlab
   valuesFrom:
     - kind: ConfigMap
       name: gitlab-9.0.2-defaults

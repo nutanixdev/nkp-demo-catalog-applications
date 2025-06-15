@@ -3,7 +3,7 @@ apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
   name: charts.gitlab.io
-  namespace: ${releaseNamespace}
+  namespace: gitlab
 spec:
   url: "${helmMirrorURL:=https://charts.gitlab.io/}"
   interval: 10m
