@@ -10,19 +10,18 @@ data:
     global:
       edition: ce
       hosts:
-        domain: sslip.io
-        hostSuffix: ${ingressAddress}
+        domain: ${ingressAddress}
       ingress:
         configureCertmanager: false
         class: kommander-traefik
         provider: traefik
       minio:
         enabled: false
-      appConfig:
-        object_store:
-          enabled: true
-          connection:
-            secret: gitlab-bucket-storage
+      # appConfig:
+      #   object_store:
+      #     enabled: true
+      #     connection:
+      #       secret: gitlab-bucket-storage
     certmanager:
       install: false
     nginx-ingress:
