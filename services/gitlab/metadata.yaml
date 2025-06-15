@@ -4,7 +4,6 @@ allowMultipleInstances: false
 category:
   - general
 dependencies:
-  - rook-ceph-cluster
 type: catalog
 scope:
   - workspace

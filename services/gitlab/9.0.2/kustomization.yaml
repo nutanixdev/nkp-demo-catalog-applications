@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
   - helmrelease.yaml
   - dashboard.yaml
+  - namespace.yaml
   - ../../../helm-repositories/charts.gitlab.io
