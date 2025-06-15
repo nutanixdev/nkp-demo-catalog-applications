@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: rook-bucket-storage
+  name: gitlab-bucket-storage
   namespace: ${releaseNamespace}
 type: Opaque
 stringData:

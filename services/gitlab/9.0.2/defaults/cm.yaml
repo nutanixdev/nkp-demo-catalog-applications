@@ -11,7 +11,7 @@ data:
       edition: ce
       hosts:
         domain: sslip.io
-        hostSuffix: placeholder
+        hostSuffix: ${ingressAddress}
       ingress:
         configureCertmanager: false
         class: kommander-traefik
@@ -22,7 +22,7 @@ data:
         object_store:
           enabled: true
           connection:
-            secret: rook-bucket-storage
+            secret: gitlab-bucket-storage
     certmanager:
       install: false
     nginx-ingress:
@@ -42,16 +42,3 @@ data:
       webservice:
         minReplicas: 1
         maxReplicas: 1
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: gitlab-dashboard
-  namespace: ${releaseNamespace}
-  labels:
-    kommander.d2iq.io/application: gitlab
-data:
-  dashboardLink: placeholder
-  docsLink: "https://docs.gitlab.com/"
-  name: GitLab
-  version: 9.0.2

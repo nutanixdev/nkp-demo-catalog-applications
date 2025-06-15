@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gitlab-dashboard
+  namespace: ${releaseNamespace}
+  labels:
+    kommander.d2iq.io/application: gitlab
+data:
+  dashboardLink: https://gitlab.${ingressAddress}/
+  docsLink: "https://docs.gitlab.com/"
+  name: GitLab
+  version: 9.0.2

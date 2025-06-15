@@ -3,6 +3,9 @@ description: The most-comprehensive AI-powered DevSecOps platform
 allowMultipleInstances: false
 category:
   - general
+dependencies:
+  - rook-ceph-cluster
+type: catalog
 scope:
   - workspace
 licensing:
