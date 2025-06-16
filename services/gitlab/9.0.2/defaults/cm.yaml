@@ -12,9 +12,12 @@ data:
       hosts:
         domain: ${ingressAddress}
       ingress:
-        configureCertmanager: false
-        class: kommander-traefik
+        enabled: true
         provider: traefik
+        class: kommander-traefik
+        configureCertmanager: false
+        tls:
+          enabled: false
     certmanager:
       install: false
     nginx-ingress:
