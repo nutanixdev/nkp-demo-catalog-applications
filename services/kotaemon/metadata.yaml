@@ -1,0 +1,66 @@
+displayName: Kotaemon
+description: An open-source RAG-based tool for chatting with your documents.
+category:
+  - AI
+type: catalog
+allowMultipleInstances: false
+scope:
+  - workspace
+licensing:
+  - Ultimate
+  - Enterprise
+certifications:
+overview: |-
+  ## Product Overview
+  An open-source clean & customizable RAG UI for chatting with your documents. Built with both end users and developers in mind.
+
+  ## Introduction
+
+  This project serves as a functional RAG UI for both end users who want to do QA on their
+  documents and developers who want to build their own RAG pipeline.
+  <br>
+
+  ```yml
+  +----------------------------------------------------------------------------+
+  | End users: Those who use apps built with `kotaemon`.                       |
+  | (You use an app like the one in the demo above)                            |
+  |     +----------------------------------------------------------------+     |
+  |     | Developers: Those who built with `kotaemon`.                   |     |
+  |     | (You have `import kotaemon` somewhere in your project)         |     |
+  |     |     +----------------------------------------------------+     |     |
+  |     |     | Contributors: Those who make `kotaemon` better.    |     |     |
+  |     |     | (You make PR to this repo)                         |     |     |
+  |     |     +----------------------------------------------------+     |     |
+  |     +----------------------------------------------------------------+     |
+  +----------------------------------------------------------------------------+
+  ```
+
+  ### For end users
+
+  - **Clean & Minimalistic UI**: A user-friendly interface for RAG-based QA.
+  - **Support for Various LLMs**: Compatible with LLM API providers (OpenAI, AzureOpenAI, Cohere, etc.) and local LLMs (via `ollama` and `llama-cpp-python`).
+  - **Easy Installation**: Simple scripts to get you started quickly.
+
+  ### For developers
+
+  - **Framework for RAG Pipelines**: Tools to build your own RAG-based document QA pipeline.
+  - **Customizable UI**: See your RAG pipeline in action with the provided UI, built with <a href='https://github.com/gradio-app/gradio'>Gradio <img src='https://img.shields.io/github/stars/gradio-app/gradio'></a>.
+  - **Gradio Theme**: If you use Gradio for development, check out our theme here: [kotaemon-gradio-theme](https://github.com/lone17/kotaemon-gradio-theme).
+
+  ## Key Features
+
+  - **Host your own document QA (RAG) web-UI**: Support multi-user login, organize your files in private/public collections, collaborate and share your favorite chat with others.
+
+  - **Organize your LLM & Embedding models**: Support both local LLMs & popular API providers (OpenAI, Azure, Ollama, Groq).
+
+  - **Hybrid RAG pipeline**: Sane default RAG pipeline with hybrid (full-text & vector) retriever and re-ranking to ensure best retrieval quality.
+
+  - **Multi-modal QA support**: Perform Question Answering on multiple documents with figures and tables support. Support multi-modal document parsing (selectable options on UI).
+
+  - **Advanced citations with document preview**: By default the system will provide detailed citations to ensure the correctness of LLM answers. View your citations (incl. relevant score) directly in the _in-browser PDF viewer_ with highlights. Warning when retrieval pipeline return low relevant articles.
+
+  - **Support complex reasoning methods**: Use question decomposition to answer your complex/multi-hop question. Support agent-based reasoning with `ReAct`, `ReWOO` and other agents.
+
+  - **Configurable settings UI**: You can adjust most important aspects of retrieval & generation process on the UI (incl. prompts).
+
+  - **Extensible**: Being built on Gradio, you are free to customize or add any UI elements as you like. Also, we aim to support multiple strategies for document indexing & retrieval. `GraphRAG` indexing pipeline is provided as an example.

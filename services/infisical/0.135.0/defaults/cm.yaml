@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: infisical-0.135.0-defaults
+  namespace: ${releaseNamespace}
+data:
+  values.yaml: |
+    infisical:
+      image:
+        repository: infisical/infisical
+        tag: "v0.135.0-postgres"
+        pullPolicy: IfNotPresent

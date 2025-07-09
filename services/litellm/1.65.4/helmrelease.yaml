@@ -1,0 +1,28 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: litellm
+  namespace: ${releaseNamespace}
+spec:
+  chart:
+    spec:
+      chart: litellm
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: unique
+        namespace: ${releaseNamespace}
+      version: 1.65.4
+  interval: 1m0s
+  install:
+    createNamespace: true
+    crds: CreateReplace
+  targetNamespace: litellm
+  releaseName: litellm
+  valuesFrom:
+    - kind: ConfigMap
+      name: litellm-1.65.4-defaults
+    - kind: ConfigMap
+      name: litellm-overrides
+      optional: true

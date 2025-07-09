@@ -1,0 +1,28 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: flowise
+  namespace: ${releaseNamespace}
+spec:
+  chart:
+    spec:
+      chart: flowise
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: flowise
+        namespace: ${releaseNamespace}
+      version: 3.11.3
+  interval: 1m0s
+  install:
+    createNamespace: true
+    crds: CreateReplace
+  targetNamespace: flowise
+  releaseName: flowise
+  valuesFrom:
+    - kind: ConfigMap
+      name: flowise-3.11.3-defaults
+    - kind: ConfigMap
+      name: flowise-overrides
+      optional: true

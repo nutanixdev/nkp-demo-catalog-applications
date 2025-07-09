@@ -1,0 +1,28 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: external-secrets
+  namespace: ${releaseNamespace}
+spec:
+  chart:
+    spec:
+      chart: external-secrets
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: external-secrets
+        namespace: ${releaseNamespace}
+      version: latest
+  install:
+    createNamespace: true
+    crds: CreateReplace
+  interval: 1m0s
+  targetNamespace: external-secrets
+  releaseName: external-secrets
+  valuesFrom:
+    - kind: ConfigMap
+      name: external-secrets-0.16.1-defaults
+    - kind: ConfigMap
+      name: external-secrets-overrides
+      optional: true

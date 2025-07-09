@@ -1,0 +1,8 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: n8n-1.99.1-defaults
+  namespace: ${releaseNamespace}
+data:
+  values.yaml: |

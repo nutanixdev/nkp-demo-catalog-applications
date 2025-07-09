@@ -1,0 +1,8 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kotaemon-0.10.2-defaults
+  namespace: ${releaseNamespace}
+data:
+  values.yaml: |

@@ -1,0 +1,39 @@
+# apiVersion: apps/v1
+# kind: StatefulSet
+# metadata:
+#   name: anything-llm
+#   namespace: ${releaseNamespace}
+# spec:
+#   serviceName: "anything-llm-service"
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: anything-llm
+#   template:
+#     metadata:
+#       labels:
+#         app: anything-llm
+#     spec:
+#       containers:
+#       - name: anything-llm
+#         image: mintplexlabs/anythingllm:1.4.0
+#         ports:
+#         - containerPort: 3001
+#           name: http
+#         env:
+#         - name: STORAGE_DIR
+#           value: "/app/server/storage"
+#         volumeMounts:
+#         - name: storage
+#           mountPath: /app/server/storage
+#         securityContext:
+#           capabilities:
+#             add: ["SYS_ADMIN"]
+#   volumeClaimTemplates:
+#   - metadata:
+#       name: storage
+#     spec:
+#       accessModes: [ "ReadWriteOnce" ]
+#       resources:
+#         requests:
+#           storage: 40Gi
