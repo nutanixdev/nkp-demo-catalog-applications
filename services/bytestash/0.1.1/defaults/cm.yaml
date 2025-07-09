@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bytestash-0.1.1-defaults
+  namespace: ${releaseNamespace}
+data:
+  values.yaml: |
+    bytestash:
+      baseUrl: "/bytestash"
+    persistence:
+      enabled: true
+    ingress:
+      enabled: true
+      host: "${ingressAddress}"
+      path: "/bytestash"

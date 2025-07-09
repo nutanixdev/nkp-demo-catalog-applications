@@ -5,3 +5,9 @@ resources:
   - hub.jupyter.org
   - weave-gitops
   - charts.gitlab.io
+  - helm.openwebui.com
+  - otwld.github.io
+  - rocm.github.io
+  - la-cc.github.io
+  - jordan-dalby.github.io
+  - helm.elastic.co

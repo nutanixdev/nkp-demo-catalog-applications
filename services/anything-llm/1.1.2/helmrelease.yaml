@@ -1,0 +1,28 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: anything-llm
+  namespace: ${releaseNamespace}
+spec:
+  chart:
+    spec:
+      chart: anything-llm
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: anything-llm
+        namespace: ${releaseNamespace}
+      version: 1.1.2
+  interval: 1m0s
+  install:
+    createNamespace: true
+    crds: CreateReplace
+  targetNamespace: anything-llm
+  releaseName: anything-llm
+  valuesFrom:
+    - kind: ConfigMap
+      name: anything-llm-1.1.2-defaults
+    - kind: ConfigMap
+      name: anything-llm-overrides
+      optional: true

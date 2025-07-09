@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kotaemon
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: kotaemon
+  namespace: kotaemon
+spec:
+  serviceName: "kotaemon-service"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kotaemon
+  template:
+    metadata:
+      labels:
+        app: kotaemon
+    spec:
+      containers:
+        - name: kotaemon
+          image: ghcr.io/cinnamon/kotaemon:main-full
+          ports:
+            - containerPort: 80
+              name: http
+          env:
+            - name: GRADIO_SERVER_NAME
+              value: "0.0.0.0"
+            - name: GRADIO_SERVER_PORT
+              value: "80"
+          volumeMounts:
+            - name: storage
+              mountPath: /app/ktem_app_data
+  volumeClaimTemplates:
+    - metadata:
+        name: storage
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 40Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kotaemon
+  namespace: kotaemon
+spec:
+  type: LoadBalancer
+  selector:
+    app: kotaemon
+  ports:
+    - protocol: TCP
+      port: 80

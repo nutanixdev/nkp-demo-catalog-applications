@@ -1,0 +1,28 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: eck-operator
+  namespace: ${releaseNamespace}
+spec:
+  chart:
+    spec:
+      chart: eck-operator
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: eck-operator
+        namespace: ${releaseNamespace}
+      version: 3.0.0
+  interval: 1m0s
+  install:
+    createNamespace: true
+    crds: CreateReplace
+  targetNamespace: elastic-system
+  releaseName: eck-operator
+  valuesFrom:
+    - kind: ConfigMap
+      name: eck-operator-3.0.0-defaults
+    - kind: ConfigMap
+      name: eck-operator-overrides
+      optional: true
