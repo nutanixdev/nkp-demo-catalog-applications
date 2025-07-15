@@ -1,0 +1,23 @@
+displayName: AMD GPU Operator
+description: The AMD GPU Operator manages AMD GPU resources in a Kubernetes cluster and automates tasks related to bootstrapping GPU nodes.
+category:
+  - general
+type: platform
+scope:
+  - workspace
+licensing:
+  - Pro
+  - Ultimate
+  - Essential
+  - Enterprise
+certifications:
+  - qualified
+  - airgapped
+overview: |-
+  # Overview
+  The AMD GPU Operator uses the operator framework within Kubernetes to automate the management of all AMD software components needed to provision GPU. These components include the AMD drivers , Kubernetes device plugin for GPUs and others.
+
+  ## More Information
+  - [AMD GPU Operator Documentation](https://instinct.docs.amd.com/projects/gpu-operator/en/latest/)
+  - [AMD GPU Operator - GitHub](https://github.com/ROCm/gpu-operator)
+icon: PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPgo8c3ZnIGZpbGw9IiMwMDAwMDAiIHdpZHRoPSI4MDBweCIgaGVpZ2h0PSI4MDBweCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHJvbGU9ImltZyI+PHRpdGxlPkFNRCBpY29uPC90aXRsZT48cGF0aCBkPSJNMTguMzI0IDkuMTM3bDEuNTU5IDEuNTZoMi41NTZ2Mi41NTdMMjQgMTQuODE0VjkuMTM3ek0yIDkuNTJsLTIgNC45NmgxLjMwOWwuMzctLjk4MkgzLjlsLjQwOC45ODJoMS4zMzhMMy40MzIgOS41MnptNC4yMDkgMHY0Ljk1NWgxLjIzOHYtMy4wOTJsMS4zMzggMS41NjJoLjE4OGwxLjMzOC0xLjU1NnYzLjA5MWgxLjIzOFY5LjUySDEwLjQ3bC0xLjU5MiAxLjg0NUw3LjI4NyA5LjUyem02LjI4MyAwdjQuOTZoMi4wNTdjMS45NzkgMCAyLjg4LTEuMDQ2IDIuODgtMi40NzIgMC0xLjM2LS45MzctMi40ODgtMi43NDctMi40ODh6bTEuMjM3LjkxaC43OTJjMS4xNyAwIDEuNjMuNzExIDEuNjMgMS41NyAwIC43MjgtLjM3MiAxLjU3Mi0xLjYxNiAxLjU3MmgtLjgwNnptLTEwLjk4NS4yNzNsLjc5MSAxLjkzMkgyLjAwOHptMTcuMTM3LjMwN2wtMS42MDQgMS42MDN2Mi4yNWgyLjI0NmwxLjYwNC0xLjYwN2gtMi4yNDZ6Ii8+PC9zdmc+

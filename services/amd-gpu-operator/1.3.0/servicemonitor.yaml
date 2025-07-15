@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: amd-gpu-metrics
+  namespace: kube-amd-gpu
+  labels:
+    prometheus.kommander.d2iq.io/select: "true"
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: amd-gpu-metrics
+  namespaceSelector:
+    matchNames:
+      - kube-amd-gpu
+  endpoints:
+    - port: "5000"
+      interval: 30s
+      path: /metrics
+      scheme: http
