@@ -1,0 +1,16 @@
+displayName: Bytestash
+description: Bytestash
+category:
+  - General
+type: catalog
+allowMultipleInstances: false
+scope:
+  - workspace
+licensing:
+  - Ultimate
+  - Enterprise
+certifications:
+overview: |
+  # Bytestash
+helm-repo: https://jordan-dalby.github.io/ByteStash/
+helm-chart: bytestash/bytestash

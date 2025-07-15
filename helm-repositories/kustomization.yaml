@@ -2,6 +2,18 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - bitnamicharts
-  - hub.jupyter.org
-  - weave-gitops
+  - charts.external-secrets.io
   - charts.gitlab.io
+  - cowboysysop.github.io
+  - dl.cloudsmith.io
+  - grafana.github.io
+  - helm.elastic.co
+  - helm.openwebui.com
+  - hub.jupyter.org
+  - jordan-dalby.github.io
+  - kyverno.github.io
+  - la-cc.github.io
+  - otwld.github.io
+  - rocm.github.io
+  - unique-ag.github.io
+  - weave-gitops

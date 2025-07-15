@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kyverno-3.4.4-defaults
+  namespace: ${releaseNamespace}
+data:
+  values.yaml: |
+    admissionController:
+      replicas: 3
+    backgroundController:
+      replicas: 2
+    cleanupController:
+      replicas: 2
+    reportsController:
+      replicas: 2
