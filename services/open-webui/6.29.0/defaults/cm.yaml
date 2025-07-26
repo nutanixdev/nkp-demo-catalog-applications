@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: open-webui-6.29.0-defaults
+  namespace: ${releaseNamespace}
+data:
+  values.yaml: |
+    ingress:
+      enabled: false
+    service:
+      type: LoadBalancer
+    ollama:
+      ollama:
+        gpu:
+          enabled: true
+        models:
+          pull:
+            - mistral
