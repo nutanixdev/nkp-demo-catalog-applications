@@ -9,5 +9,5 @@ data:
     infisical:
       image:
         repository: infisical/infisical
-        tag: "v0.135.0-postgres"
+        tag: "v0.144.0-postgres"
         pullPolicy: IfNotPresent
