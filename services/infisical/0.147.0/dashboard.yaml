@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    kommander.d2iq.io/application: infisical
+  name: infisical-dashboard-info
+  namespace: infisical-system
+data:
+  dashboardLink: https://infisical.${ingressAddress}/
+  docsLink: https://infisical.com/docs/
+  name: infisical
+  version: "0.147.0"

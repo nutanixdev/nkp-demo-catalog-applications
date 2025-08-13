@@ -16,7 +16,7 @@
                 "services/infisical/.*/defaults/cm\\.yaml$"
             ],
             "matchStrings": [
-                "repository:\\s*(?<depName>infisical/infisical)\\s*\\n\\s*tag:\\s*\"(?<currentValue>v[0-9]+\\.[0-9]+\\.[0-9]+-postgres)\""
+                "repository:\\s*(?<depName>infisical/infisical)\\s*\\n\\s*tag:\\s*\"(?<currentValue>v[0-9]+\\.[0-9]+\\.[0-9]+)\""
             ],
             "datasourceTemplate": "docker",
             "versioningTemplate": "docker"
@@ -30,7 +30,7 @@
             "matchPackageNames": [
                 "infisical/infisical"
             ],
-            "allowedVersions": "/^v\\d+\\.\\d+\\.\\d+-postgres$/"
+            "allowedVersions": "/^v\\d+\\.\\d+\\.\\d+$/"
         }
     ]
 }
