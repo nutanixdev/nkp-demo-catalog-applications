@@ -9,5 +9,5 @@ data:
     infisical:
       image:
         repository: infisical/infisical
-        tag: "v0.147.0"
+        tag: "v0.149.0"
         pullPolicy: IfNotPresent
