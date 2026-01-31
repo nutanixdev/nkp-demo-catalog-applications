@@ -3,7 +3,7 @@ apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
   name: milvus
-  namespace: ${releaseNamespace}
+  namespace: ${workspaceNamespace}
 spec:
   interval: 10m
   timeout: 1m
