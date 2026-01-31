@@ -12,7 +12,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: zilliztech.github.io
-        namespace: ${workspaceNamespace}
+        namespace: ${releaseNamespace}
       version: 2.6.9
   interval: 1m
   install:
