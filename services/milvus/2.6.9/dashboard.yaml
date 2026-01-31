@@ -4,7 +4,7 @@ metadata:
   labels:
     kommander.d2iq.io/application: milvus
   name: milvus-dashboard-info
-  namespace: milvus
+  namespace: ${releaseNamespace}
 data:
   dashboardLink: https://milvus.${ingressAddress}/
   docsLink: https://milvus.io
