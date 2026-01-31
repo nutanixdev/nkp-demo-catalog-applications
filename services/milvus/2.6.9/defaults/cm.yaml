@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: milvus-2.6.9-defaults
+  namespace: ${releaseNamespace}
+data:
+  values.yaml: |
+    ---
+    cluster:
+      enabled: false
+    pulsarv3:
+      enabled: false
+    standalone:
+      messageQueue: woodpecker
+    woodpecker:
+      enabled: true
+    streaming:
+      enabled: true

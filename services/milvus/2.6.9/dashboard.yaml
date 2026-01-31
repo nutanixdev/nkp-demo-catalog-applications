@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    kommander.d2iq.io/application: milvus
+  name: milvus-dashboard-info
+  namespace: milvus
+data:
+  dashboardLink: https://milvus.${ingressAddress}/
+  docsLink: https://milvus.io
+  name: milvus
+  version: "2.6.9"

@@ -1,0 +1,29 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: milvus
+  namespace: ${releaseNamespace}
+spec:
+  chart:
+    spec:
+      chart: milvus
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: zilliztech.github.io
+        namespace: ${workspaceNamespace}
+      version: 2.6.9
+  interval: 1m
+  install:
+    crds: CreateReplace
+  upgrade:
+    crds: CreateReplace
+  releaseName: milvus
+  targetNamespace: ${releaseNamespace}
+  valuesFrom:
+    - kind: ConfigMap
+      name: milvus-2.6.9-defaults
+    - kind: ConfigMap
+      name: milvus-overrides
+      optional: true
