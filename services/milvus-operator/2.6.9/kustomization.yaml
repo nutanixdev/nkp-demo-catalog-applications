@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - helmrelease.yaml
   - dashboard.yaml
-  - milvus.yaml
+  # - milvus.yaml
   - ../../../helm-repositories/zilliztech.github.io
