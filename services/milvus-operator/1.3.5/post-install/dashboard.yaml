@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   labels:
     kommander.d2iq.io/application: milvus-operator
-  name: milvus-dashboard-info
+  name: milvus-operator-dashboard-info
   namespace: milvus
 data:
   dashboardLink: https://milvus.${ingressAddress}/
