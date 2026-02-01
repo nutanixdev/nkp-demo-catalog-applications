@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    kommander.d2iq.io/application: ${releaseName}
+  name: ${releaseName}-dashboard-info
+  namespace: n8n
+data:
+  dashboardLink: https://n8n.${ingressAddress}/
+  docsLink: https://n8n.io
+  name: n8n
+  version: "1.99.1"
