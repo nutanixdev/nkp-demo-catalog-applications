@@ -7,6 +7,9 @@ metadata:
 data:
   values.yaml: |
     ---
+    image:
+      all:
+        tag: v2.6.9
     cluster:
       enabled: false
     pulsarv3:

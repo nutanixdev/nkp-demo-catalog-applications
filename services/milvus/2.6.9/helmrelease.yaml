@@ -13,7 +13,6 @@ spec:
         kind: HelmRepository
         name: milvus
         namespace: ${releaseNamespace}
-      version: 2.6.9
   interval: 15s
   install:
     crds: CreateReplace
