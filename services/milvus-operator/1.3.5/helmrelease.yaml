@@ -18,7 +18,7 @@ spec:
   install:
     createNamespace: true
     crds: CreateReplace
-  targetNamespace: ${releaseNamespace}
+  targetNamespace: ${releaseName}
   releaseName: milvus-operator
   valuesFrom:
     - kind: ConfigMap
