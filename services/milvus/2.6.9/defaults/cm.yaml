@@ -6,16 +6,16 @@ metadata:
   namespace: ${releaseNamespace}
 data:
   values.yaml: |
-    image:
-      all:
-        tag: v2.6.9
-    cluster:
-      enabled: false
-    pulsarv3:
-      enabled: false
-    standalone:
-      messageQueue: woodpecker
-    woodpecker:
-      enabled: true
-    streaming:
-      enabled: true
+    # image:
+    #   all:
+    #     tag: v2.6.9
+    # cluster:
+    #   enabled: false
+    # pulsarv3:
+    #   enabled: false
+    # standalone:
+    #   messageQueue: woodpecker
+    # woodpecker:
+    #   enabled: true
+    # streaming:
+    #   enabled: true
