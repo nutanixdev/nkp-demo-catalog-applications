@@ -22,7 +22,7 @@ spec:
   releaseName: milvus-operator
   valuesFrom:
     - kind: ConfigMap
-      name: ${releaseName}-1.3.5-defaults
-    - kind: ConfigMap
-      name: ${releaseName}-overrides
-      optional: true
+      name: ${releaseName}-1.3.5-config-defaults
+    # - kind: ConfigMap
+    #   name: ${releaseName}-overrides
+    #   optional: true
