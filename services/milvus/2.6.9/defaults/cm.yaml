@@ -6,7 +6,6 @@ metadata:
   namespace: ${releaseNamespace}
 data:
   values.yaml: |
-    ---
     image:
       all:
         tag: v2.6.9
