@@ -14,11 +14,15 @@ spec:
         name: zilliztech.github.io
         namespace: ${releaseNamespace}
       version: 2.6.9
-  interval: 1m
+  interval: 15s
   install:
     crds: CreateReplace
+    remediation:
+      retries: 30
   upgrade:
     crds: CreateReplace
+    remediation:
+      retries: 30
   releaseName: milvus
   targetNamespace: ${releaseNamespace}
   valuesFrom:
