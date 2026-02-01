@@ -14,3 +14,21 @@ spec:
     image: milvusdb/milvus:v2.6.10
   dependencies: {} # Optional
   config: {} # Optional
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: milvus-ingress
+  namespace: milvus
+spec:
+  rules:
+    - host: milvus.${ingressAddress}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: milvus-standalone-milvus
+                port:
+                  number: 9091
