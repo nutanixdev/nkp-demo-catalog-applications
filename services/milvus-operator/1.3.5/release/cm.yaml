@@ -6,3 +6,5 @@ metadata:
   namespace: ${releaseNamespace}
 data:
   values.yaml: |-
+    image:
+      repository: docker.io/milvusdb/milvus-operator
