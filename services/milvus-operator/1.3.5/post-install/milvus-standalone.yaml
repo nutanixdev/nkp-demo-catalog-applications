@@ -1,0 +1,11 @@
+apiVersion: milvus.io/v1beta1
+kind: Milvus
+metadata:
+  name: milvus-standalone
+  namespace: milvus
+spec:
+  mode: standalone # Optional ("standalone", "cluster") default="standalone"
+  components:
+    image: milvusdb/milvus:v2.6.10
+  dependencies: {} # Optional
+  config: {} # Optional
