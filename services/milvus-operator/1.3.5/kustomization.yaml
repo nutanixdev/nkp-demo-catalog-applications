@@ -4,4 +4,4 @@ resources:
   - helmrelease.yaml
   # - dashboard.yaml
   # - milvus.yaml
-  - ../../../helm-repositories/zilliztech.github.io
+  # - ../../../helm-repositories/zilliztech.github.io
