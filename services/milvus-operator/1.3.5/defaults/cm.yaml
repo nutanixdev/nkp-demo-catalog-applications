@@ -5,4 +5,4 @@ metadata:
   name: ${releaseName}-1.3.5-config-defaults
   namespace: ${releaseNamespace}
 data:
-  values.yaml: |
+  values.yaml: |-
