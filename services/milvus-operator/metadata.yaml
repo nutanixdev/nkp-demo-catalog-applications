@@ -1,5 +1,7 @@
+schema: catalog.nkp.nutanix.com/v1/application-metadata
 displayName: Milvus Operator
 description: Milvus is an open-source vector database built for GenAI applications. Perform high-speed searches and scale to tens of billions of vectors with minimal performance loss.
+type: nkp-catalog
 category:
   - Vector Database
 allowMultipleInstances: false
