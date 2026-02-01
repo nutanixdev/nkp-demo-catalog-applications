@@ -1,5 +1,5 @@
-displayName: milvus
-description: Open-source high-performance, highly scalable vector database that runs efficiently across a wide range of environments.
+displayName: Milvus Operator
+description: Milvus is an open-source vector database built for GenAI applications. Perform high-speed searches and scale to tens of billions of vectors with minimal performance loss.
 category:
   - Vector Database
 allowMultipleInstances: false
@@ -15,7 +15,7 @@ overview: |-
   This is not an official production ready code. It's meant to be used as a PoC.
 
   ## Overview
-  Milvus is an open-source vector database built for GenAI applications. Perform high-speed searches and scale to tens of billions of vectors with minimal performance loss.
+  Milvus Operator is a solution that helps you deploy and manage a full Milvus service stack to target Kubernetes (K8s) clusters. The stack includes all Milvus components and relevant dependencies like etcd, Pulsar, and MinIO.
 
   ## Key Features
 

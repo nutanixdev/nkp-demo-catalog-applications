@@ -2,9 +2,9 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: milvus
+  name: milvus-operator
   namespace: ${releaseNamespace}
 spec:
   interval: 10m
   timeout: 1m
-  url: https://zilliztech.github.io/milvus-helm/
+  url: https://zilliztech.github.io/milvus-operator/
